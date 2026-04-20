@@ -30,7 +30,7 @@ The goal is to validate:
 Base URL:
 
 ```bash
-https://simple-grocery-store-api.glitch.me
+https://simple-grocery-store-api.click
 ```
 
 ### Core Endpoints Tested
