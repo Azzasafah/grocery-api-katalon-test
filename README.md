@@ -22,6 +22,7 @@ The goal is to validate:
 * **Groovy**
 * **REST API Testing**
 * **Postman Collection (as reference)**
+* **⚡ Performance Testing (k6)**
 
 ---
 
@@ -60,6 +61,7 @@ GroceryStoreAPITest/
 ├── Object Repository/
 ├── Profiles/
 ├── Reports/
+├── K6/
 ```
 
 ---
@@ -114,21 +116,36 @@ TC13_RegisterDuplicateEmail
 TC15_CreateOrderWithoutToken
 ```
 
----
-
-# 📊 Test Coverage Matrix
-
-| Endpoint         | Method | Positive | Negative | Reason                    |
-| ---------------- | ------ | -------- | -------- | ------------------------- |
-| /status          | GET    | TC01     | -        | API health check          |
-| /products        | GET    | TC02     | -        | Validate product list     |
-| /products/:id    | GET    | TC03     | TC05     | Validate valid/invalid ID |
-| /carts           | POST   | TC06     | -        | Create cart for flow      |
-| /carts/:id/items | POST   | TC07     | TC11     | Add item validation       |
-| /api-clients     | POST   | TC12     | TC13     | Auth & duplicate email    |
-| /orders          | POST   | TC14     | TC15     | Secure order creation     |
+Ini aku ubahin jadi bagian README yang **rapi, profesional, dan enak dibaca recruiter** 🔥
 
 ---
+
+## 📊 Test Coverage Matrix
+
+The following matrix describes the test coverage implemented for the **Simple Grocery Store API**, including positive and negative scenarios for each endpoint.
+
+| Endpoint               | Method | Positive Test Case    | Negative Test Case           | Description                                       |
+| ---------------------- | ------ | --------------------- | ---------------------------- | ------------------------------------------------- |
+| `/status`              | GET    | TC01_CheckAPIStatus   | -                            | Verify API availability (health check)            |
+| `/products`            | GET    | TC02_GetAllProduct    | -                            | Validate product list retrieval                   |
+| `/products/:id`        | GET    | TC03_GetSingleProduct | TC05_GetProductInvalidId     | Validate valid & invalid product ID               |
+| `/carts`               | POST   | TC06_CreateNewCart    | -                            | Create a new cart for transaction flow            |
+| `/carts/:cartId/items` | POST   | TC07_AddItemToCart    | TC11_AddInvalidProductToCart | Validate adding valid/invalid items               |
+| `/api-clients`         | POST   | TC12_Register         | TC13_RegisterDuplicateEmail  | Validate client registration & duplicate handling |
+| `/orders`              | POST   | TC14_CreateOrder      | TC15_CreateOrderWithoutToken | Validate secure order creation with/without token |
+
+---
+
+## 🧠 Coverage Highlights
+
+* ✅ Covers **core business endpoints**
+* ✅ Includes both **positive & negative scenarios**
+* ✅ Validates **authentication flow**
+* ✅ Ensures **data integrity and error handling**
+* ✅ Supports **regression testing stability**
+
+---
+
 
 ## 🔄 Test Flow (Key Scenario)
 
@@ -211,6 +228,7 @@ This project demonstrates:
    * `TS_Smoke`
    * `TS_Positive_Flow`
    * `TS_Negative_API`
+   * `TS_Regression`
 3. Click **Run**
 
 ---
@@ -222,6 +240,51 @@ TS_Smoke        → ✅ Passed
 TS_Positive     → ✅ Passed
 TS_Negative     → ✅ Passed
 ```
+
+
+---
+
+# ⚡ Performance Testing (k6)
+
+##  GET /products (Read Test)
+
+### 🎯 Objective
+
+Evaluate whether the API can handle **1000 concurrent users**
+
+### 📊 Result
+
+* ✅ Response time: **p95 = 719 ms**
+* ❌ Error rate: **~80%**
+
+### 📌 Conclusion
+
+> The API responds quickly, but is **not stable under high load**, as most requests fail.
+
+---
+
+##  Cart Flow (Create Cart → Add Item)
+
+### 🎯 Objective
+
+Simulate real user behavior (write operation) with up to **500 concurrent users**
+
+### 📊 Result
+
+* ✅ Response time: **p95 ~1.5s**
+* ❌ Error rate: **50–60%**
+
+### 📌 Conclusion
+
+> The flow fails under high load, especially during **cart creation**, indicating limitations in handling stateful operations.
+
+---
+
+## 🧠 Key Insights
+
+* Read endpoints are more scalable than write operations
+* Fast response time does not guarantee system stability
+* Bottlenecks appear under high concurrency
 
 ---
 
@@ -235,24 +298,10 @@ API Collection:
 
 ---
 
-## 💡 Future Improvements
-
-* CI/CD Integration (GitHub Actions)
-* Test Data Management
-* Reporting enhancement (Allure / HTML Report)
-* Regression Test Suite
-
----
 
 ## 👤 Author
 
 **Safah**
 QA Engineer (Aspiring)
-
----
-
-## ⭐ Notes
-
-This project is built as a **portfolio-level API automation project** demonstrating real-world QA workflow and structure.
 
 ---
