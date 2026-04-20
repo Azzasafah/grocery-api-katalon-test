@@ -36,7 +36,7 @@ import internal.GlobalVariable
 KeywordUtil.logInfo("=== TC-004: Get Single Product (ID Valid) ===")
  
 // Kirim request GET /products/8739
-def response = WS.sendRequest(findTestObject('Simple Grocery Store API/Get single product'))
+def response = WS.sendRequest(findTestObject('Simple Grocery Store API/Products/Get single product'))
 
 // Verifikasi status code 200
 WS.verifyResponseStatusCode(response, 200)
@@ -47,13 +47,12 @@ def product = new JsonSlurper().parseText(response.getResponseText())
 // Verifikasi field-field produk ada
 assert product.id != null : 'Produk harus memiliki id'
 assert product.name != null : 'Produk harus memiliki name'
+assert product.price != null : 'Produk harus memiliki price'
 assert product.category != null : 'Produk harus memiliki category'
 assert product.inStock != null : 'Produk harus memiliki field inStock'
 
 println('Produk ditemukan: ' + product.name)
 println('Harga: ' + product.price)
-println('Test Case 3 PASSED: Get Single Product berhasil')
 
- 
 KeywordUtil.logInfo("=== TC-004 PASSED ✅ — Produk: ${product.name} | Stok: ${product.inStock} ===")
  
