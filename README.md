@@ -116,6 +116,20 @@ TC15_CreateOrderWithoutToken
 
 ---
 
+# 📊 Test Coverage Matrix
+
+| Endpoint         | Method | Positive | Negative | Reason                    |
+| ---------------- | ------ | -------- | -------- | ------------------------- |
+| /status          | GET    | TC01     | -        | API health check          |
+| /products        | GET    | TC02     | -        | Validate product list     |
+| /products/:id    | GET    | TC03     | TC05     | Validate valid/invalid ID |
+| /carts           | POST   | TC06     | -        | Create cart for flow      |
+| /carts/:id/items | POST   | TC07     | TC11     | Add item validation       |
+| /api-clients     | POST   | TC12     | TC13     | Auth & duplicate email    |
+| /orders          | POST   | TC14     | TC15     | Secure order creation     |
+
+---
+
 ## 🔄 Test Flow (Key Scenario)
 
 ### 🛒 Cart Flow
