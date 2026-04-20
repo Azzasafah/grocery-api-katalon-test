@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Nama yang deskriptif memudahkan identifikasi</description>
+   <name>TC01_CheckAPIStatus</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>eba06cc3-b67f-4de8-889c-0b303ef42c71</testCaseGuid>
+</TestCaseEntity>

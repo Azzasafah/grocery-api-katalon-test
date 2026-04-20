@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC13_RegiterDuplicateEmail</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>72d8d1bb-c836-4f4b-94e8-b861700ef20b</testCaseGuid>
+</TestCaseEntity>

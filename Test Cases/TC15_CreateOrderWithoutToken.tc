@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC15_CreateOrderWithoutToken</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>8a8555ac-3d94-4600-ab40-336a2a33b4a1</testCaseGuid>
+</TestCaseEntity>

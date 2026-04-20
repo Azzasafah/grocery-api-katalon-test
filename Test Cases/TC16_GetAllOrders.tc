@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC16_GetAllOrders</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>19200c75-c4cd-41c3-bedc-1ed0c721e3c6</testCaseGuid>
+</TestCaseEntity>

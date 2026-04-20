@@ -1,0 +1,27 @@
+# Katalon folders (generated)
+bin/
+Libs/
+Reports/
+output/
+build/
+.gradle/
+
+# Keep empty output folder
+!output/.gitkeep
+
+# Eclipse / Katalon config
+.classpath
+.project
+.settings/
+
+# IntelliJ (optional)
+.idea/
+
+# Cache & temp
+.cache/
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApiCollectionEntity>
+   <description>Postman api collection</description>
+   <name>Simple Grocery Store API</name>
+   <tag></tag>
+   <folderType>WEBELEMENT</folderType>
+   <collectionType>POSTMAN</collectionType>
+</ApiCollectionEntity>

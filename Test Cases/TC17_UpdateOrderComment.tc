@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC17_UpdateOrderComment</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d45b92fe-8720-4d63-b7a0-6d3de15ce4e0</testCaseGuid>
+</TestCaseEntity>
